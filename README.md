@@ -27,7 +27,7 @@ This project was built using these technologies.
 
 Clone the repo:
 ```
-git clone 
+git clone https://github.com/ricardo123321/WEATHER-APP.git
 ```
 Inside the root folder of the project, install the node packages:
 ```
