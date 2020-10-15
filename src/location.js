@@ -1,11 +1,10 @@
 const genHtml = (data) => {
-  console.log(data)
-  const locationdiv = document.querySelector('.location')
-  if(data.weather === undefined){
-    const html = `<h2>City not found</h2>`
-    locationdiv.innerHTML = html
-  }else{
-  const html = `
+  const locationdiv = document.querySelector('.location');
+  if (data.weather === undefined) {
+    const html = '<h2>City not found</h2>';
+    locationdiv.innerHTML = html;
+  } else {
+    const html = `
   <div class='name col-6'>
   <h3>${data.name}</h3>
   <img src=http://openweathermap.org/img/w/${data.weather[0].icon}.png>
@@ -17,9 +16,9 @@ const genHtml = (data) => {
   <h4>pressure: ${data.main.pressure}MB</h4>
   <h4>wind: ${data.wind.speed}mph</h4>
   </div>
-  `
-  locationdiv.innerHTML = html
+  `;
+    locationdiv.innerHTML = html;
   }
-}
+};
 
 export default genHtml;
