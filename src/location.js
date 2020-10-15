@@ -8,7 +8,7 @@ const genHtml = (data) => {
   <div class='name col-6'>
   <h3>${data.name}</h3>
   <img src=http://openweathermap.org/img/w/${data.weather[0].icon}.png>
-  <h3>${data.weather[0].main}</h3>
+  <h3>${data.weather[0].description}</h3>
   </div>
   <div class="details col-6">
   <h4>Temp: ${data.main.temp} fahrenheit</h4>
