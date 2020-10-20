@@ -11,8 +11,8 @@ const genHtml = (data) => {
   <h3>${data.weather[0].description}</h3>
   </div>
   <div class="details col-6">
-  <h4>Temp: ${data.main.temp} fahrenheit</h4>
-  <h4>Humidity: ${data.main.humidity}%</h4>
+  <h4>Temp: <span class='temper'>${data.main.temp}</span> <button class="button2">Fahrenheit</button></h4>
+  <h4>Humidity: ${data.main.humidity}</h4>
   <h4>pressure: ${data.main.pressure}MB</h4>
   <h4>wind: ${data.wind.speed}mph</h4>
   </div>
@@ -21,4 +21,16 @@ const genHtml = (data) => {
   }
 };
 
-export default genHtml;
+const modiHtml = (info) => {
+  const temph4 = document.querySelector('.temper');
+  const button2 = document.querySelector('.button2');
+  if (button2.textContent === 'Celsius') {
+    button2.textContent = 'Fahrenheit';
+    temph4.innerHTML = info;
+  } else {
+    button2.textContent = 'Celsius';
+    temph4.innerHTML = info;
+  }
+};
+
+export { genHtml, modiHtml };

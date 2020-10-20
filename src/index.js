@@ -1,4 +1,4 @@
-import genHtml from './location';
+import { genHtml, modiHtml } from './location';
 
 const whData = {
   url: 'http://api.openweathermap.org/data/2.5/weather?q=',
@@ -13,5 +13,17 @@ button1.addEventListener('click', () => {
   const apiUrl = `${url}${locat}${key}`;
   fetch(apiUrl)
     .then((data) => (data.json()))
-    .then((place) => genHtml(place));
+    .then((place) => {
+      genHtml(place);
+      const button2 = document.querySelector('.button2');
+      button2.addEventListener('click', () => {
+        const button2 = document.querySelector('.button2');
+        if (button2.textContent === 'Fahrenheit') {
+          const result = (place.main.temp - 32) / 1.8;
+          modiHtml(`${result}`);
+        } else {
+          modiHtml(`${place.main.temp}`);
+        }
+      });
+    });
 });
